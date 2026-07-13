@@ -65,15 +65,30 @@ export default function Dashboard() {
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredProperties.map((property) => (
+            {filteredProperties.map((property, idx) => {
+              const propertyImages = [
+                'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=500&h=300&fit=crop',
+                'https://images.unsplash.com/photo-1570129477492-45ac003fbf30?w=500&h=300&fit=crop',
+                'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=500&h=300&fit=crop',
+                'https://images.unsplash.com/photo-1506643456615-330fda52c60e?w=500&h=300&fit=crop',
+                'https://images.unsplash.com/photo-1580828343604-37b93d8a4b1e?w=500&h=300&fit=crop',
+                'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=500&h=300&fit=crop',
+              ];
+              const imageUrl = propertyImages[idx % propertyImages.length];
+              
+              return (
               <Link
                 key={property.id}
                 to={`/property/${property.id}`}
                 className="bg-white rounded-xl shadow-md hover:shadow-xl transition overflow-hidden transform hover:scale-105"
               >
                 {/* Image */}
-                <div className="bg-gradient-to-r from-blue-400 to-indigo-600 h-48 flex items-center justify-center">
-                  <span className="text-white">Property Image</span>
+                <div className="relative h-48 overflow-hidden bg-gray-200">
+                  <img 
+                    src={imageUrl} 
+                    alt={property.title}
+                    className="w-full h-full object-cover hover:scale-110 transition duration-300"
+                  />
                 </div>
 
                 {/* Content */}
@@ -101,7 +116,8 @@ export default function Dashboard() {
                   </div>
                 </div>
               </Link>
-            ))}
+              );
+            })}
           </div>
         )}
       </div>

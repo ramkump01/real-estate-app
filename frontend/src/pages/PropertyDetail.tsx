@@ -67,8 +67,12 @@ export default function PropertyDetail() {
     <div className="max-w-4xl mx-auto p-4">
       <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
         {/* Image */}
-        <div className="bg-gradient-to-r from-blue-400 to-indigo-600 h-80 flex items-center justify-center">
-          <span className="text-white text-2xl">Property Image</span>
+        <div className="relative h-80 overflow-hidden bg-gray-200">
+          <img 
+            src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1200&h=400&fit=crop"
+            alt={property.title}
+            className="w-full h-full object-cover"
+          />
         </div>
 
         {/* Details */}
