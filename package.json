@@ -8,7 +8,7 @@
     "start": "uvicorn main:app",
     "db:init": "python -c \"from models import Base, engine; Base.metadata.create_all(bind=engine)\"",
     "db:drop": "python -c \"from models import Base, engine; Base.metadata.drop_all(bind=engine)\"",
-    "vercel-build": "cd frontend && npm ci --prefer-offline --no-audit --progress=false && npm run build",
+    "vercel-build": "cd frontend && npm install --prefer-offline --no-audit --progress=false && npm run build",
     "build": "npm run vercel-build"
   },
 
