@@ -7,7 +7,8 @@
     "dev": "uvicorn main:app --reload",
     "start": "uvicorn main:app",
     "db:init": "python -c \"from models import Base, engine; Base.metadata.create_all(bind=engine)\"",
-    "db:drop": "python -c \"from models import Base, engine; Base.metadata.drop_all(bind=engine)\""
+    "db:drop": "python -c \"from models import Base, engine; Base.metadata.drop_all(bind=engine)\"",
+    "vercel-build": "cd frontend && npm ci --prefer-offline --no-audit --progress=false && npm run build"
   },
   "keywords": ["real-estate", "fastapi", "react", "ai", "pricing"],
   "author": "",
