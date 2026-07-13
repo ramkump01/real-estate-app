@@ -1,0 +1,15 @@
+{
+  "name": "real-estate-app",
+  "version": "1.0.0",
+  "description": "Full-stack real estate application with AI pricing",
+  "main": "main.py",
+  "scripts": {
+    "dev": "uvicorn main:app --reload",
+    "start": "uvicorn main:app",
+    "db:init": "python -c \"from models import Base, engine; Base.metadata.create_all(bind=engine)\"",
+    "db:drop": "python -c \"from models import Base, engine; Base.metadata.drop_all(bind=engine)\""
+  },
+  "keywords": ["real-estate", "fastapi", "react", "ai", "pricing"],
+  "author": "",
+  "license": "MIT"
+}
